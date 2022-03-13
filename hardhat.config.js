@@ -29,6 +29,10 @@ module.exports = {
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
+    rinkeby: {
+      url: process.env.ALCHEMY_API_URL,
+      accounts: [process.env.PRIVATE_RINK_ACCESS],
+    },
   },
   gasReporter: {
     enabled: process.env.REPORT_GAS !== undefined,
