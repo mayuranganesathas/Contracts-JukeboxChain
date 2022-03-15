@@ -1,8 +1,22 @@
 const main = async () => {
+  //Create "Fake Users" to test our contract
+  const [owner, randomPerson] = await hre.ethers.getSigners();
+
   const jukeBoxContractFactory = await hre.ethers.getContractFactory("JukeBox");
   const jukeBoxContract = await jukeBoxContractFactory.deploy();
   await jukeBoxContract.deployed();
   console.log("Contract deployed to:", jukeBoxContract.address);
+  console.log("Contract Owner:", owner.address);
+
+  let message = "test";
+  let jukeBoxHistory;
+  jukeBoxHistory = await jukeBoxContract.getJukeBoxData();
+
+  let jukeBoxPlayerTxn;
+  jukeBoxPlayerTxn = await jukeBoxContract.jukeBoxPlay(message);
+  await jukeBoxPlayerTxn.wait();
+
+  jukeBoxHistory = await jukeBoxContract.getJukeBoxData();
 };
 
 const runMain = async () => {

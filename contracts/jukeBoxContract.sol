@@ -13,7 +13,7 @@ contract JukeBox {
 
     struct Song {
         address waver; // The address of the user who waved.
-        string _songLink; // songLink the user sent.
+        string songLink; // songLink the user sent.
         uint256 timestamp; // The timestamp when the user waved.
     }
 
@@ -30,7 +30,7 @@ contract JukeBox {
         emit NewSong(msg.sender, block.timestamp, _currentSongLink);
     }
 
-    function getJukeBoxHistory() public view returns (Song[] memory) {
+    function getJukeBoxData() public view returns (Song[] memory) {
         return songs;
     }
 }
