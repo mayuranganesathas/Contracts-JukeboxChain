@@ -11,14 +11,11 @@ contract JukeBox {
         console.log("JukeBox Contract Deployed");
     }
 
-
-
-  struct Song {
+    struct Song {
         address waver; // The address of the user who waved.
         string _songLink; // songLink the user sent.
         uint256 timestamp; // The timestamp when the user waved.
     }
-
 
     Song[] songs;
 
@@ -27,17 +24,13 @@ contract JukeBox {
         console.log("Submitted a Token, song Loading", msg.sender);
 
         //store the song, sender and time for chain history
-        songs.push(Song(msg.sender, _currentSongLink, block.timestamp))
+        songs.push(Song(msg.sender, _currentSongLink, block.timestamp));
 
         //emit event to be used
         emit NewSong(msg.sender, block.timestamp, _currentSongLink);
-
     }
 
     function getJukeBoxHistory() public view returns (Song[] memory) {
-        return songs
+        return songs;
     }
-
-
-
 }
