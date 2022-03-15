@@ -1,43 +1,6 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/Users/mayu/Documents/web3/jbc-contracts/contracts/Greeter.sol": {
-      "lastModificationDate": 1647184828985,
-      "contentHash": "54c28c84e5277b35b8c8329ce9755dae",
-      "sourceName": "contracts/Greeter.sol",
-      "solcConfig": {
-        "version": "0.8.4",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "hardhat/console.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "Greeter"
-      ]
-    },
     "/Users/mayu/Documents/web3/jbc-contracts/node_modules/hardhat/console.sol": {
       "lastModificationDate": 1647184810811,
       "contentHash": "cc4777addd464ea56fa35b1c45df0591",
@@ -71,6 +34,43 @@
       ],
       "artifacts": [
         "console"
+      ]
+    },
+    "/Users/mayu/Documents/web3/jbc-contracts/contracts/jukeBoxContract.sol": {
+      "lastModificationDate": 1647289962001,
+      "contentHash": "e6ca36f0765556884a4ba9c279d49b89",
+      "sourceName": "contracts/jukeBoxContract.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "JukeBox"
       ]
     }
   }
