@@ -9,7 +9,6 @@ contract JukeBox {
         address indexed from,
         string songLink,
         uint256 timestamp,
-        string albumImage,
         string songTitle,
         string artistName
     );
@@ -22,7 +21,6 @@ contract JukeBox {
         address jukeboxPlayer; // The address of the user who waved.
         string songLink; // songLink the user sent.
         uint256 timestamp; // The timestamp when the user waved.
-        string albumImage; // holds place for album image
         string songTitle; //holds place for song title
         string artistName; //holds place for artist name
     }
@@ -32,11 +30,9 @@ contract JukeBox {
     // TODO: add function parameters to accept from FE
     function jukeBoxPlay(
         string memory songLink,
-        string memory albumImage,
         string memory songTitle,
         string memory artistName
     ) public {
-        // add jukebox song to the contract
         console.log("Submitted a Token, song Loading", msg.sender);
 
         //store the song, sender and time for chain history
@@ -45,7 +41,6 @@ contract JukeBox {
                 msg.sender,
                 songLink,
                 block.timestamp,
-                albumImage,
                 songTitle,
                 artistName
             )
@@ -56,7 +51,6 @@ contract JukeBox {
             msg.sender,
             songLink,
             block.timestamp,
-            albumImage,
             songTitle,
             artistName
         );
