@@ -37,8 +37,8 @@
       ]
     },
     "/Users/mayu/Documents/web3/jbc-contracts/contracts/jukeBoxContract.sol": {
-      "lastModificationDate": 1647368604590,
-      "contentHash": "4f8ac50bf0b2c39d4fbd9440027e5020",
+      "lastModificationDate": 1648313626033,
+      "contentHash": "260612b3cd778a0492f6c060f560dfcd",
       "sourceName": "contracts/jukeBoxContract.sol",
       "solcConfig": {
         "version": "0.8.4",

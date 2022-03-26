@@ -5,32 +5,58 @@ import "hardhat/console.sol";
 contract JukeBox {
     //declare variables here
 
-    event NewSong(address indexed from, uint256 timestamp, string songLink);
+    event NewSong(
+        address indexed from,
+        string songLink,
+        uint256 timestamp,
+        string songTitle,
+        string artistName
+    );
 
     constructor() {
         console.log("JukeBox Contract Deployed");
     }
 
-    struct Song {
-        address waver; // The address of the user who waved.
+    struct SpotifySong {
+        address jukeboxPlayer; // The address of the user who waved.
         string songLink; // songLink the user sent.
         uint256 timestamp; // The timestamp when the user waved.
+        string songTitle; //holds place for song title
+        string artistName; //holds place for artist name
     }
 
-    Song[] songs;
+    SpotifySong[] songs;
 
-    function jukeBoxPlay(string memory _currentSongLink) public {
-        // add jukebox song to the contract
+    // TODO: add function parameters to accept from FE
+    function jukeBoxPlay(
+        string memory songLink,
+        string memory songTitle,
+        string memory artistName
+    ) public {
         console.log("Submitted a Token, song Loading", msg.sender);
 
         //store the song, sender and time for chain history
-        songs.push(Song(msg.sender, _currentSongLink, block.timestamp));
+        songs.push(
+            SpotifySong(
+                msg.sender,
+                songLink,
+                block.timestamp,
+                songTitle,
+                artistName
+            )
+        );
 
         //emit event to be used
-        emit NewSong(msg.sender, block.timestamp, _currentSongLink);
+        emit NewSong(
+            msg.sender,
+            songLink,
+            block.timestamp,
+            songTitle,
+            artistName
+        );
     }
 
-    function getJukeBoxData() public view returns (Song[] memory) {
+    function getJukeBoxData() public view returns (SpotifySong[] memory) {
         return songs;
     }
 }
