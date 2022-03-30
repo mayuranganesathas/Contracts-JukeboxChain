@@ -3,8 +3,6 @@ pragma solidity ^0.8.0;
 import "hardhat/console.sol";
 
 contract JukeBox {
-    //declare variables here
-
     event NewSong(
         address indexed from,
         string songLink,
@@ -46,7 +44,6 @@ contract JukeBox {
             )
         );
 
-        //emit event to be used
         emit NewSong(
             msg.sender,
             songLink,
