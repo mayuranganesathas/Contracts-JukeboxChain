@@ -8,7 +8,8 @@ contract JukeBox {
         string songLink,
         uint256 timestamp,
         string songTitle,
-        string artistName
+        string artistName,
+        string albumImage
     );
 
     constructor() {
@@ -21,6 +22,7 @@ contract JukeBox {
         uint256 timestamp; // The timestamp when the user waved.
         string songTitle; //holds place for song title
         string artistName; //holds place for artist name
+        string albumImage; // holds place for album image
     }
 
     SpotifySong[] songs;
@@ -29,7 +31,8 @@ contract JukeBox {
     function jukeBoxPlay(
         string memory songLink,
         string memory songTitle,
-        string memory artistName
+        string memory artistName,
+        string memory albumImage
     ) public {
         console.log("Submitted a Token, song Loading", msg.sender);
 
@@ -40,7 +43,8 @@ contract JukeBox {
                 songLink,
                 block.timestamp,
                 songTitle,
-                artistName
+                artistName,
+                albumImage
             )
         );
 
@@ -49,7 +53,8 @@ contract JukeBox {
             songLink,
             block.timestamp,
             songTitle,
-            artistName
+            artistName,
+            albumImage
         );
     }
 
